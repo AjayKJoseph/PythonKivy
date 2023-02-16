@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+*.pyvenv.cfg
+*pyvenv.cfg
+Lib/
+Scripts/
+singger/
+kivy_venv
