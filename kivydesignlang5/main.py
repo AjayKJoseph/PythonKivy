@@ -7,21 +7,27 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
+from kivy.properties import ObjectProperty
 
 # kivy.requre('1.9.0')
 
 class MyGridLayout(Widget):
 
+    name = ObjectProperty(None)
+    pizza = ObjectProperty(None)
+    color = ObjectProperty(None)
     
     # Create an instance outside of __init__ to capture Input Texts
-    def press(self, instance): # instance is keyword comparable to event keyword in tkinter
+    def press(self): 
         name = self.name.text # Line 19
         pizza = self.pizza.text
         color = self.color.text
         
         # Display name on the app
-        test =f'Hello {name}, you like {pizza} pizza, your favourite color is {color}'
-        self.add_widget(Label(text=test))
+        # test =f'Hello {name}, you like {pizza} pizza, your favourite color is {color}'
+        # self.add_widget(Label(text=test))
+        
+        print(f'Hello {name}, you like {pizza} pizza, your favourite color is {color}')
         
         # Clear input boxes
         self.name.text = ""
